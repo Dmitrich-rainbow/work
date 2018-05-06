@@ -1,0 +1,2 @@
+Работает только в DAC режиме (например /m)
+exec procDecryptObject 'dbo','yourprocname'

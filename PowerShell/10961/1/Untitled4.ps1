@@ -1,0 +1,1 @@
+﻿Dir c:\Windows | Get-Member -MemberType Property

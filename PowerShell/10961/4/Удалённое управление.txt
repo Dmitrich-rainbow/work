@@ -1,0 +1,5 @@
+Удалённое управление:
+
+	1. -ComputerName
+	2. PSSession
+	3. Invoke-Command

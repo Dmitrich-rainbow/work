@@ -1,0 +1,1 @@
+﻿Get-Service | Get-Member -MemberType Property

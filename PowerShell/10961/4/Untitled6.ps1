@@ -1,0 +1,1 @@
+﻿Get-Service -Verbose -Debug

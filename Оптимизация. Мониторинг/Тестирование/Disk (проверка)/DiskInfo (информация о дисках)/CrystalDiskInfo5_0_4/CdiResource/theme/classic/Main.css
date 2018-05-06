@@ -1,0 +1,371 @@
+*
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+body
+{
+	color: #000000;
+	background: #ffffff;
+	background-image: url(background.png);
+/*	font-family: "Lucida Sans Unicode", "Segoe UI", Meiryo, Tahoma;*/
+}
+
+h2
+{
+	font-size: 20px;
+	color: #444444;
+}
+
+div.drive a:hover
+{
+	color: #000000;
+	text-decoration: none;
+	background: #ffffff center center repeat-x;
+	background-position: 0px -48px;
+}
+
+table
+{
+	font-size: 12px;
+	line-height: 1.0;
+}
+
+.inline
+{
+	display: inline;
+}
+
+.double
+{
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+}
+
+#DiskStatus
+{
+	color: #333333;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	cursor: pointer;
+}
+
+div.diskStatusGood
+{
+	display: block;
+	background: #ffffff url(diskStatusGood.png) no-repeat;
+	padding-top: 12px;
+	width: 96px;
+	height: 58px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+div.diskStatusCaution
+{
+	display: block;
+	background: #ffffff url(diskStatusCaution.png) no-repeat;
+	padding-top: 12px;
+	width: 96px;
+	height: 58px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+div.diskStatusBad
+{
+	display: block;
+	background: #ffffff url(diskStatusBad.png) no-repeat;
+	padding-top: 12px;
+	width: 96px;
+	height: 58px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+div.diskStatusUnknown
+{
+	display: block;
+	background: #ffffff url(diskStatusUnknown.png) no-repeat;
+	padding-top: 12px;
+	width: 96px;
+	height: 58px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+div.diskStatusLine1
+{
+	padding-top: 8px;
+	line-height: 2.4;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+div.diskStatusLine2
+{
+	padding-top: 8px;
+	line-height: 1.2;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#Temperature
+{
+	display: block;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.temperatureGood
+{
+	background: url(temperatureGood.png) no-repeat;
+	padding-top: 8px;
+	width: 96px;
+	height: 38px;
+}
+
+.temperatureCaution
+{
+	background: url(temperatureCaution.png) no-repeat;
+	padding-top: 8px;
+	width: 96px;
+	height: 38px;
+}
+
+.temperatureBad
+{
+	background: url(temperatureBad.png) no-repeat;
+	padding-top: 8px;
+	width: 96px;
+	height: 38px;
+}
+
+.temperatureUnknown
+{
+	background: url(temperatureUnknown.png) no-repeat;
+	padding-top: 8px;
+	width: 96px;
+	height: 38px;
+}
+
+div.label
+{
+	display: block;
+	padding-left: 0px;
+	padding-right: 4px;
+	padding-top: 4px;
+	padding-bottom: 0px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 12px;
+	height: 16px;
+	line-height: 1.1;
+}
+
+div.valueL
+{
+	display: block;
+	text-align: left;
+	border-left: #cccccc 1px solid;
+	border-top: #f0f0f0 1px solid;
+	border-bottom: #dddddd 1px solid;
+	border-right: #f0f0f0 1px solid;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 4px;
+	padding-bottom: 0px;
+	color: #111111;
+	font-size: 12px;
+	height: 16px;
+	text-overflow: ellipsis;
+	line-height: 1.1;
+}
+
+div.valueC
+{
+	display: block;
+	text-align: center;
+	border-left: #cccccc 1px solid;
+	border-top: #f0f0f0 1px solid;
+	border-bottom: #dddddd 1px solid;
+	border-right: #f0f0f0 1px solid;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 4px;
+	padding-bottom: 0px;
+	color: #111111;
+	font-size: 12px;
+	height: 16px;
+	text-overflow: ellipsis;
+}
+
+div.valueR
+{
+	display: block;
+	text-align: right;
+	border-left: #cccccc 1px solid;
+	border-top: #f0f0f0 1px solid;
+	border-bottom: #dddddd 1px solid;
+	border-right: #f0f0f0 1px solid;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 4px;
+	padding-bottom: 0px;
+	color: #111111;
+	font-size: 12px;
+	height: 16px;
+	text-overflow: ellipsis;
+}
+
+div.gray
+{
+	color: #cccccc;
+}
+
+#menuBar
+{
+	width: 640px;
+	height: 48px;
+	list-style-type: none;
+	margin-bottom: 4px;
+	font-weight: bold;
+	line-height: 1.20;
+	font-size: 12px;
+	text-align: center;
+	background: #ffffff url(noDisk.png) repeat-x;
+	background-position: 0px 0px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#menuBar li
+{
+	float: left;
+	margin: 0px;
+	padding: 0px;
+}
+
+#menuBar li a
+{
+	display: block;
+	padding-top: 4px;
+	color: #333333;
+	text-decoration: none;
+	height: 48px;
+	width: 80px;
+}
+
+#menuBar li a.diskStatusGood
+{
+	background: url(diskGood.png) no-repeat;
+	background-position: 0px 0px;
+}
+
+#menuBar li a.diskStatusGoodSelected
+{
+	background: url(diskGood.png) no-repeat;
+	background-position: 0px -48px;
+}
+
+#menuBar li a.diskStatusCaution
+{
+	background: url(diskCaution.png) no-repeat;
+	background-position: 0px 0px;
+}
+
+#menuBar li a.diskStatusCautionSelected
+{
+	background: url(diskCaution.png) no-repeat;
+	background-position: 0px -48px;
+}
+
+#menuBar li a.diskStatusBad
+{
+	background: url(diskBad.png) no-repeat;
+	background-position: 0px 0px;
+}
+
+#menuBar li a.diskStatusBadSelected
+{
+	background: url(diskBad.png) no-repeat;
+	background-position: 0px -48px;
+}
+
+#menuBar li a.diskStatusUnknown
+{
+	background: url(diskUnknown.png) no-repeat;
+	background-position: 0px 0px;
+}
+
+#menuBar li a.diskStatusUnknownSelected
+{
+	background: url(diskUnknown.png) no-repeat;
+	background-position: 0px -48px;
+}
+
+#menuBar li a:hover
+{
+	background-position: 0px -96px;
+}
+
+#menuBar li a.good:hover
+{
+	background-position: 0px -96px;
+}
+
+#menuBar li a.caution:hover
+{
+	background-position: 0px -96px;
+}
+
+#menuBar li a.bad:hover
+{
+	background-position: 0px -96px;
+}
+
+#DivPreDisk a
+{
+	display: block;
+	height: 20px;
+	width: 20px;
+	background: url(preDisk.png) no-repeat;
+}
+
+#DivPreDisk a:hover
+{
+	background-position: 0px -20px;
+}
+
+#DivNextDisk a
+{
+	display: block;
+	height: 20px;
+	width: 20px;
+	background: url(nextDisk.png) no-repeat;
+}
+
+#DivNextDisk a:hover
+{
+	background-position: 0px -20px;
+}
+
+.hidden
+{
+	visibility: hidden;
+}
+
+.visible
+{
+	visibility: visible;
+}
+
+.unsupported
+{
+	color: #cccccc;
+}

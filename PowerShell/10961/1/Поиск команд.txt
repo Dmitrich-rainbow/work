@@ -1,0 +1,9 @@
+Поиск команд:
+
+	Get-Command	
+		-Verb
+		-Noun
+		-Module
+
+	Get-Module
+		-ListAvailable

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Performance Reports", "Performance Dashboard Reports\Performance Reports.rptproj", "{5FFCBE42-15F3-4969-BA0A-BC61C58E6E09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		LiveDeploy|Default = LiveDeploy|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FFCBE42-15F3-4969-BA0A-BC61C58E6E09}.Debug|Default.ActiveCfg = Debug
+		{5FFCBE42-15F3-4969-BA0A-BC61C58E6E09}.Debug|Default.Build.0 = DebugLocal
+		{5FFCBE42-15F3-4969-BA0A-BC61C58E6E09}.Debug|Default.Deploy.0 = DebugLocal
+		{5FFCBE42-15F3-4969-BA0A-BC61C58E6E09}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{5FFCBE42-15F3-4969-BA0A-BC61C58E6E09}.DebugLocal|Default.Build.0 = DebugLocal
+		{5FFCBE42-15F3-4969-BA0A-BC61C58E6E09}.LiveDeploy|Default.ActiveCfg = LiveDeploy
+		{5FFCBE42-15F3-4969-BA0A-BC61C58E6E09}.LiveDeploy|Default.Deploy.0 = LiveDeploy
+		{5FFCBE42-15F3-4969-BA0A-BC61C58E6E09}.Release|Default.ActiveCfg = Release
+		{5FFCBE42-15F3-4969-BA0A-BC61C58E6E09}.Release|Default.Build.0 = Release
+		{5FFCBE42-15F3-4969-BA0A-BC61C58E6E09}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

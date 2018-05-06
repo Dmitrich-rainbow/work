@@ -1,0 +1,9 @@
+Абстракция файловой системы
+
+	Get-ChildItem
+	...-Item
+	...-Content
+	...-ItemProperty
++
+	...-PSDrive
+	...-PSProvider

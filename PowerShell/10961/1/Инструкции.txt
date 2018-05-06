@@ -1,0 +1,13 @@
+Инструкции:
+
+	Update-Help
+
+	Get-Help 
+		"Название команды"
+		-Detailed
+		-Full
+		-Examples
+		-Online
+
+	Get-Help about_*
+		

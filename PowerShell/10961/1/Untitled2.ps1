@@ -1,0 +1,1 @@
+﻿Get-Service | Sort-Object Status | Select-Object -First 10

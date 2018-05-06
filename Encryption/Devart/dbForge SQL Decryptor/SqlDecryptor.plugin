@@ -1,0 +1,83 @@
+﻿<Plugin xmlns='http://schemas.devart.com/appcore/2010/plugins'>
+	
+	<Node path='Plugins/SQLDecryptor'>
+		<Source ClassName='Devart.SqlDecryptor.SqlDecryptorPlugin' Assembly='SqlDecryptor' />
+	</Node>
+
+  <Node path='Options'>
+    <Set id='SqlServerConnectionsMRU' flags='Shared|Volatile|DedicatedStorage' />
+  </Node>
+
+  <Node path='Resources/Images'>
+    <ImageSet ID='GenericIcons' Assembly='SqlDecryptor' BaseName='Devart.SqlDecryptor.GenericIcons' />
+  </Node>
+
+  <Node path='UI/Commands/Standard'>
+    <Command Name='Refresh' Text='Refresh' Icon='GenericIcons.Refresh' Hint='Refresh current node'/>
+    <Command Name='Connect' Text='Connect' Icon='GenericIcons.Connect' Hint='Connect to an instance of a SQL Server'/>
+    <Command Name='Disconnect' Text='Disconnect' Icon='GenericIcons.Disconnect' Hint='Disconnect from the current SQL Server'/>
+    <Command Name='ShowDDL' Text='Show DDL script' Icon='GenericIcons.SQLBlock' Hint='Show a DDL script of the selected database object'/>
+    <Command Name='SaveDDL' Text='Save DDL to file...' Icon='StandardIcons.Save' Hint='Save a definition of an object to a file' Enabled='false'/>
+		<Command Name ='Decrypt' Text='Decrypt in-place' Icon='GenericIcons.Unlock' Hint='Decrypt and overwrite selected database object' Enabled='false' />
+		<Command Name ='DecryptionWizard' Text='Decryption Wizard...' Icon='GenericIcons.Wizard' Hint='Show decryption wizard' Enabled='false' />
+    <Command Name='Register' Text='Register...' Icon='' />
+    <Command Name='Feedback' Text='Send Feedback' Icon='' />
+		<Command Name='CheckUpdates' Text='Check for Updates...' Icon='' />
+    <Command Name='Forum' Text='Visit Forum' Icon='' />
+    <Command Name='Blog' Text='Read Blog' Icon='' />
+    <Command Name='About' Text='About' Icon='' />
+  </Node>
+
+  <Node path='UI/Toolwindows'>
+    <ToolWindow ID='EntityExplorer' Title='Object Explorer' TabText='Object Explorer' Icon='GenericIcons.ObjectExplorer' Position='Left' CloseButton='false' />
+    <Node path='EntityExplorer/ToolBar'>
+      <Button Command='Standard.Connect' Position='1'/>
+      <Button Command='Standard.Disconnect' Position='2'/>
+      <Button Command='Standard.Refresh' Position='101'/>
+      <Button Command='Standard.ShowDDL' Position='201'/>
+			<Button Command='Standard.Decrypt' Position='202'/>
+			<Button Command='Standard.DecryptionWizard' Position='301'/>
+    </Node>
+  </Node>
+
+	<Node path='UI/ContextMenus/EntityExplorer'>
+		<Button Command='Standard.Connect' Position='1'/>
+		<Button Command='Standard.Disconnect' Position='2'/>
+    <Button Command='Standard.Refresh' Position='101'/>
+    <Button Command='Standard.ShowDDL' Position='201' />
+		<Button Command='Standard.Decrypt' Position='202'/>
+		<Button Command='Standard.DecryptionWizard' Position='301'/>
+  </Node>
+
+  <Node path='UI/ContextMenus/SQLViewer'>
+    <Button Command='Standard.Copy' Position='20'/>
+    <Button Command='Standard.SaveDDL' Position='110'/>
+  </Node>
+
+  <Node path='UI/MainMenu'>
+    <SubMenu ID='File' Text='File' Position='1' />
+    <Node path='File'>
+      <Button Command='Standard.SaveDDL' Position='1' />
+      <Button Command='Standard.Close' Position='101' />
+      <Button Command='Standard.CloseAll' Position='102' />
+      <Button Command='Standard.Exit' Position='201' />
+    </Node>
+    <SubMenu ID='Action' Text='Action' Position='2' />
+		<Node path='Action'>
+			<Button Command='Standard.Connect' Position='1' />
+			<Button Command='Standard.Disconnect' Position='2' />
+      <Button Command='Standard.Refresh' Position='101'/>
+      <Button Command='Standard.ShowDDL' Position='201' />
+			<Button Command='Standard.Decrypt' Position='202'/>
+			<Button Command='Standard.DecryptionWizard' Position='301'/>
+    </Node>
+    <SubMenu ID='Help' Text='Help' Position='3' />
+    <Node path='Help'>
+      <Button Command='Standard.Feedback' Position='1' />
+      <Button Command='Standard.Forum' Position='2' />
+      <!--<Button Command='Standard.CheckUpdates' Position='3' />-->
+      <Button Command='Standard.About' Position='5' />
+    </Node>
+  </Node>
+  
+</Plugin>

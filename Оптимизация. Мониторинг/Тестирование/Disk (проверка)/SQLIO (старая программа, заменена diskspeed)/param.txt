@@ -1,0 +1,2 @@
+c:\testfile.dat 2 0x0 100
+#d:\testfile.dat 2 0x0 100

@@ -1,0 +1,3 @@
+The SQL Decryptor linked to ICSharpCode.AvalonEdit library which is licensed
+under The GNU Lesser General Public License (LGPLv3).
+You can find the corresponding terms of this license in the file LGPLv3.txt.

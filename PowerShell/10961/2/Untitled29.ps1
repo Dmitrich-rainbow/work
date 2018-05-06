@@ -1,0 +1,1 @@
+﻿Get-Service | Sort Status | FT Name, Status, CanStop, CanShutdown -AutoSize -GroupBy Status

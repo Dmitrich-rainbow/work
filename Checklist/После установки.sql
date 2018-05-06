@@ -1,0 +1,12 @@
+- Настройке верно max server memroy
+- Путь для БД по-умолчанию
+- Настройке почту и оповещние оператора о проблемных заданиях SQL Agent
+- Создать Alerts
+- Установить Performance Dashboard Reports
+- Установить sp_whoisactive, Sp_Blitz...
+- Remove Builtin\Admins from sysadmin fixed server role.
+- Enable remote DAC connections.
+- Configure SQL Error Log retention for 30 log files
+- Move MSDB Database files to SQLData and SQLLogs respectively.
+- Включить флаги трассировки
+- Настройте "max degree of parallelism" и "cost threshold of parallelism"

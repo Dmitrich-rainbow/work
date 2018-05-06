@@ -1,0 +1,180 @@
+*
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+body
+{
+	margin: 10px;
+	color: #000000;
+	background: #ffffff;
+	background-image: url(image/background.png);
+	font-family: Tahoma;
+}
+
+table
+{
+	font-size: 12px;	
+}
+
+h2
+{
+	background-image: url(image/labelEnable.png);
+	font-size: 14px;
+	height: 24px;
+	padding-left: 10px;
+	padding-top: 4px;
+	padding-bottom: 0px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	width: 420px;
+	overflow: hidden;
+}
+
+h2.labelEnable
+{
+	background-image: url(image/labelEnable.png);
+}
+
+h2.labelDisable
+{
+	background-image: url(image/labelDisable.png);
+}
+
+h2.labelUnsupported
+{
+	background-image: url(image/labelUnsupported.png);
+}
+
+#SelectDisk
+{
+	font-family: Tahoma;
+	font-size: 14px;
+	width: 420px;
+}
+
+div.label
+{
+	display: block;
+	padding-left: 0px;
+	padding-right: 2px;
+	padding-top: 2px;
+	padding-bottom: 0px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 12px;
+	height: 20px;
+	line-height: 1.2;
+}
+
+a.buttonEnable
+{
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	color : #000000;
+	width : 120px;
+	height: 24px;
+	font-size: 12px;
+	padding-top: 4px;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	background-image: url(image/buttonEnable.png);
+}
+
+a:hover.buttonEnable
+{
+	background-image: url(image/buttonHover.png);
+}
+
+a.buttonDisable
+{
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	color : #000000;
+	width : 120px;
+	height: 24px;
+	font-size: 12px;
+	padding-top: 4px;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	background-image: url(image/buttonDisable.png);
+	cursor: default;
+}
+
+div.valueL
+{
+	display: block;
+	text-align: left;
+	border-left: #cccccc 1px solid;
+	border-top: #f0f0f0 1px solid;
+	border-bottom: #dddddd 1px solid;
+	border-right: #f0f0f0 1px solid;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 2px;
+	padding-bottom: 0px;
+	color: #111111;
+	font-family: Tahoma;
+	font-size: 12px;
+	height: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 1.2;
+}
+
+div.valueC
+{
+	margin-right: 10px;
+	display: block;
+	text-align: center;
+	border-left: #cccccc 1px solid;
+	border-top: #f0f0f0 1px solid;
+	border-bottom: #dddddd 1px solid;
+	border-right: #f0f0f0 1px solid;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 2px;
+	padding-bottom: 0px;
+	color: #111111;
+	font-family: Tahoma;
+	font-size: 12px;
+	height: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+div.valueR
+{
+	margin-right: 5px;
+	display: block;
+	text-align: right;
+	border-left: #cccccc 1px solid;
+	border-top: #f0f0f0 1px solid;
+	border-bottom: #dddddd 1px solid;
+	border-right: #f0f0f0 1px solid;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	color: #111111;
+	font-family: Tahoma;
+	font-size: 12px;
+	height: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.margin-left
+{
+	margin-left: 10px;
+}
+
+div.gray
+{
+	color: #888888;
+}

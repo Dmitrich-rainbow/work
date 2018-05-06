@@ -1,0 +1,90 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html oncontextmenu="return false" onmousewheel="return !event.shiftKey" onselectstart="return false">
+<head>
+<title>CrystalDiskInfo</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<style type="text/css">
+body
+{
+	margin-top: 8px;
+	font-size: 16px;
+	text-align: center;
+	color: #000000;
+	background: #ffffff;
+	background-image: url("./image/background.png");
+  	font-family: Verdana;
+}
+
+p
+{
+	margin: 4px;
+	font-size: 20px;
+	line-height: 1.2;
+	text-align: center;
+}
+
+h1
+{
+	font-size: 22px;
+	margin: 0px;
+}
+
+a:link
+{
+	text-decoration: none;
+	color: #3333ff;
+}
+
+a:visited
+{
+	text-decoration: none;
+	color: #6666ff;
+}
+
+#CrystalDewWorld
+{
+	cursor: pointer;
+}
+
+#ProjectShizuku
+{
+	padding: 0px;
+	margin: 0px;
+	position: fixed;
+	overflow: hidden;
+	left: 0px;
+	top: 180px;
+	cursor: pointer;
+	width: 640px;
+	height: 480px;
+}
+</style>
+</head>
+<body oncontextmenu="return false" onmousewheel="return !event.shiftKey" onselectstart="return false">
+<table cellpadding="4" align="center">
+<tr>
+<td width="128">
+<img id="CrystalDewWorld" name="CrystalDewWorld" src="./image/icon.png" width="128" height="128" border="0">
+</td>
+<td width="500">
+<h1 align="center">CrystalDiskInfo <span id="Version"></span>&nbsp;<span id="Edition" class="value">NT - Unicode - x86</span></h1>
+<p>Release : <span id="Release" class="value">2008/3/31</span></p>
+<p><span id="Copyright">Copyright (C) hiyohiyo.</span></p>
+<p>The modified BSD license.</p>
+</td>
+</tr>
+</table>
+<div id="ProjectShizuku"></div>
+<script id="source" language="javascript" type="text/javascript">
+function setShizuku(x)
+{
+	document.body.style.background = "#ffffff url(" + x + ") no-repeat 0px 180px";
+}
+
+function setIcon(x)
+{
+	document.CrystalDewWorld.src = x;
+}
+</script>
+</body>
+</html>

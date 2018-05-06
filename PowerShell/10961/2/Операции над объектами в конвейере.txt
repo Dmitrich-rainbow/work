@@ -1,0 +1,27 @@
+Операции над объектами в конвейере
+
+	Sort-Object
+		-Property
+		-Descending
+
+	Select-Object
+		-Property
+		@{n="..."; e={...}}
+		-First
+		-Last
+		-Skip
+
+	Where-Object
+		-EQ, -NE, -GT, -Like...
+		-FilterScript {...}
+
+	Measure-Object
+		-Property
+		-Sum, -Minimum, Maximum, Average
+
+	Group-Object
+		-Property
+
+	ForEach-Object
+		-MemberName
+		-Process {...}

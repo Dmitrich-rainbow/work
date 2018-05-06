@@ -1,0 +1,15 @@
+Программирование:
+
+	1. Переменные
+		+ массивы
+	2. Цикл
+		1. While
+		2. Do ... While
+		3. Do ... Until
+		4. For
+	3. Перебор
+		ForEach
+	4. Условие
+		1. If
+		2. If ... Else
+		3. If ... ElseIf ... ... ElseIf ... Else

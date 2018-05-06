@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html oncontextmenu="return false" onmousewheel="return !event.shiftKey" onselectstart="return false">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>CrystalDiskInfo</title>
+  <link id="StyleSheet" href="../theme/default/Main.css" rel="stylesheet" type="text/css" />
+</head>
+<body oncontextmenu="return false" onmousewheel="return !event.shiftKey" onselectstart="return false" id="body">
+<div id="mainMenu" align="right">
+  <ul id="menuBar">
+    <li id="LiDisk0"><a href="#" id="Disk0"></a></li>
+    <li id="LiDisk1"><a href="#" id="Disk1"></a></li>
+    <li id="LiDisk2"><a href="#" id="Disk2"></a></li>
+    <li id="LiDisk3"><a href="#" id="Disk3"></a></li>
+    <li id="LiDisk4"><a href="#" id="Disk4"></a></li>
+    <li id="LiDisk5"><a href="#" id="Disk5"></a></li>
+    <li id="LiDisk6"><a href="#" id="Disk6"></a></li>
+    <li id="LiDisk7"><a href="#" id="Disk7"></a></li>
+  </ul>
+</div>
+<table width="640" align="right">
+<tr><td colspan="3">
+<table width="640" height="28" align="right">
+<tr>
+<td width="20" valign="middle"><div id="DivPreDisk"><a href="#" id="PreDisk"></a></div></td>
+<td width="576" valign="bottom"><div align="center"><h2><div id="Model" class="inline"></div>&nbsp;&nbsp;<div id="Capacity" class="inline"></div></h2></div>
+</td>
+<td width="20" valign="middle"><div id="DivNextDisk"><a href="#" id="NextDisk"></a></div></td>
+</table>
+</td></tr>
+<tr>
+<td width="8">&nbsp;</td>
+<td width="624">
+<table width="624" align="right">
+<tr>
+  <td width="98"><div id="LabelHealthStatus" class="label">Health Status</div></td>
+  <td width="124" align="right"><div id="LabelFirmware" class="label">Firmware</div></td>
+  <td width="170"><div id="Firmware" class="valueC"></div></td>
+  <td width="124" align="right"><div id="LabelBufferSize" class="label">Buffer Size</div></td>
+  <td width="90"><div class="valueR"><span id="BufferSize">----</span></div></td>
+</tr>
+<tr>
+  <td width="98" rowspan="3"><div id="DiskStatus"></div></td>
+  <td width="124" align="right"><div id="LabelSerialNumber" class="label">SerialNumber</div></td>
+  <td width="170"><div id="SerialNumber" class="valueC"></div></td>
+  <td width="124" align="right"><div id="LabelNvCacheSize" class="label">NV Cache Size</div></td>
+  <td width="90"><div id="NvCacheSzie" class="valueR"></div></td>
+</tr>
+<tr>
+  <td width="124" align="right"><div id="LabelInterface" class="label">Interface</div></td>
+  <td width="170"><div id="Interface" class="valueC"></div></td>
+  <td width="124" align="right"><div id="LabelRotationRate" class="label">Rotation Rate</div></td>
+  <td width="90"><div class="valueR"><span id="RotationRate">----</span></div>
+  </td>
+</tr>
+<tr>
+  <td width="124" align="right"><div id="LabelTransferMode" class="label">Transfer Mode</div></td>
+  <td width="170"><div id="TransferMode" class="valueC"></div></td>
+  <td width="124" align="right"><div id="LabelPowerOnCount" class="label">PowerOnCount</div></td>
+  <td width="90"><div class="valueR"><span id="PowerOnCount">----</span></div></td>
+</tr>
+<tr>
+  <td width="98"><div id="LabelTemperature" class="label">Temperature</div></td>
+  <td width="124" align="right"><div id="LabelDriveMap" class="label">Drive Letter</div></td>
+  <td width="170"><div id="DriveMap" class="valueC"></div></td>
+  <td width="124" align="right"><div id="LabelPowerOnHours" class="label">Power On Hours</div></td>
+  <td width="90"><div id="PowerOnHours" class="valueR"></div></td>
+</tr>
+<tr>
+  <td width="98" rowspan="2"><div id="Temperature"></div></td>
+  <td width="124" align="right"><div id="LabelAtaAtapi" class="label">Standard</div></td>
+  <td colspan="3"><div id="AtaAtapi" class="valueL"></div></td>
+</tr>
+<tr>
+  <td width="124" align="right"><div id="LabelFeature" class="label">Feature</div></td>
+  <td colspan="3">
+    <div class="valueL">
+      <span title="Self-Monitoring, Analysis and Reporting Technology" id="FeatureSmart" class="unsupported">S.M.A.R.T.</span><span class="gray">,</span>
+      <span title="48bit Logical Block Addressing" id="Feature48Lba" class="unsupported">48bit LBA</span><span class="gray">,</span>
+      <span title="Advanced Power Management" id="FeatureApm" class="unsupported">APM</span><span class="gray">,</span>
+      <span title="Automatic Acoustic Management" id="FeatureAam" class="unsupported">AAM</span><span class="gray">,</span>
+      <span title="Native Command Queuing" id="FeatureNcq" class="unsupported">NCQ</span><span class="gray">,</span>
+      <span title="Trim function of DATA SET MANAGEMENT command" id="FeatureTrim" class="unsupported">TRIM</span>
+    </div>
+  </td>
+</tr>
+</table>
+</td>
+<td width="8">&nbsp;</td>
+</tr>
+</table>
+<script id="source" language="javascript" type="text/javascript">
+function setFont(x)
+{
+	document.body.style.fontFamily = x;
+}
+
+function setShizuku(x)
+{
+	document.body.style.background = "#ffffff url(" + x + ") no-repeat";
+}
+</script>
+</body>
+</html>

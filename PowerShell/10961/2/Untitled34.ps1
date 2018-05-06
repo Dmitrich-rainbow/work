@@ -1,0 +1,1 @@
+﻿Get-Service | Export-Csv "C:\Users\Administrator\Desktop\10961 (июль 2015)\2\Службы.csv"

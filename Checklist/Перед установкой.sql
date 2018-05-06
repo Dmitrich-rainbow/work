@@ -1,0 +1,19 @@
+- Validating you’ve got the right basic redundancy in your hardware
+- Configuring HBAs and multi-pathing. If using SAN Storage test HBA Queue Depth settings at 64 and 128 in conjunction with SAN admin to determine the optimal setting for the server based on IO demands and impact to other systems using the SAN, ensure that MPIO is configured properly. 
+- Configuring your Operating System, system drive, and page file for SQL Server (with 64K)
+- Provisioning storage for backups
+- Creating Service Accounts and granting permissions
+- Formatting drives and settings like Instant File Initialization for the best SQL Server performance
+- Setting up Anti-Virus with Microsoft recommended best practices
+- Installing and configuring SQL Server
+- Установите нужные обновления
+- Setting up maintenance to run backups, manage index fragmentation, and check for corruption
+- Getting basic monitoring and alerting from the SQL Server Agent
+- Designing the right number of files and layout for tempdb
+- Copying SQL Server logins from other servers
+- Add admin to SQL Server
+- Installing free tools and running a health check against SQL Server
+- Hyper threading enabled in the Bios
+- Windows Updates configured to download but not install.
+- NIC’s configured as teamed (if appropriate), set to Full Duplex and maximum network speed (usually 1GB).
+- Validate IO Subsystem configuration is optimal using SQLIO and test alternate configurations to determine optimum configuration for SQL.

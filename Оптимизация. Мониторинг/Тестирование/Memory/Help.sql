@@ -1,0 +1,1 @@
+1. Запустить mdsched в cmd или найти через поиск memory diagnostic

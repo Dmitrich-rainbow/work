@@ -1,0 +1,1 @@
+http://www.sqlscientist.com/2014/01/setup-kerberos-authentication-for-sql.html

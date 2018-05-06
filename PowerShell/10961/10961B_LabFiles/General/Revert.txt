@@ -1,0 +1,11 @@
+Follow these instructions to revert a virtual machine.
+
+1. On your host computer, display the Hyper-V Manager window.
+
+2. Right-click the name of the virtual machine you want to revert.
+
+3. From the context menu, select Revert.
+
+4. Wait until the reversion completes.
+
+5. Repeat steps 2-4 for any other virtual machines that you want to revert.

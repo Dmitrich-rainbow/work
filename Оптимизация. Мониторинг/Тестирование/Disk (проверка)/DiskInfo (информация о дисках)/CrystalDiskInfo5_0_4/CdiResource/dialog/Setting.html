@@ -1,0 +1,64 @@
+﻿<html oncontextmenu="return false" onmousewheel="return !event.shiftKey" onselectstart="return false">
+<head>
+<title>CrystalDiskInfo</title>
+<link id="StyleSheet" href="Setting.css" rel="stylesheet" type="text/css" />
+</head>
+<body oncontextmenu="return false" onmousewheel="return !event.shiftKey" onselectstart="return false">
+<table width="424" border="0" align="center">
+  <tr>
+    <td colspan="3"><select name="select" id="SelectDisk" title="SelectDisk">
+      <option value="0" selected="selected">Disk1</option>
+    </select></td>
+  </tr>
+  
+  <tr>
+    <td colspan="3"><h2 id="LabelAam" title=
+"Automatic Acoustic Management
+80h : Minimum acoustic emanation level
+FEh : Maximum performance">Automatic Acoustic Management (AAM)</h2></td>
+  </tr>
+  <tr>
+    <td width="186"><div id="AamLow" class="margin-left">&lt;- Silent (0x80)</div></td>
+    <td width="186" height="18"><div align="right"><div id="AamHigh">Normal (0xFE) -&gt;</div>
+    </div></td>
+    <td width="46"><div id="AamStatus" class="valueC"></div></td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
+    <td><div id="CurrentAam" class="valueR"></div></td>
+  </tr>
+  <tr>
+    <td colspan="2"><div align="right"><div id="AamRecommend">Recommended Value</div></div></td>
+    <td><div id="RecommendAam" class="valueR"></div></td>
+  </tr>
+  <tr>
+    <td><div align="left"><a href="#" id="DisableAam" class="buttonEnable">Disable</a></div></td>
+    <td colspan="2"><div align="right"><a href="#" id="EnableAam" class="buttonEnable">Enable</a></div></td>
+  </tr>
+  
+  <tr>
+    <td colspan="3"><h2 id="LabelApm" title=
+"Advanced Power Management
+01h : Minimum power consumption with Standby
+80h : Minimum power consumption without Standby
+FEh : Maximum performance"
+>Advanced Power Management (APM)</h2></td>
+  </tr>
+  <tr>
+    <td><div id="ApmLow" class="margin-left">&lt;- Lowest Power (0x01)</div></td>
+    <td height="18"><div align="right"><div id="ApmHigh">Performance (0xFE) -&gt; </div>
+    </div></td>
+    <td><div id="ApmStatus" class="valueC"></div></td>
+  </tr>
+  <tr>
+    <td colspan="2"></td>
+    <td><div id="CurrentApm" class="valueR"></div></td>
+  </tr>
+  <tr>
+    <td><div align="left"><a href="#" id="DisableApm" class="buttonEnable">Disable</a></div></td>
+    <td colspan="2"><div align="right"><a href="#" id="EnableApm" class="buttonEnable">Enable</a></div></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

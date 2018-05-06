@@ -1,0 +1,95 @@
+CREATE DATABASE testdb2 ON /u02/db2inst2 USING codeset 1251 TERRITORY RU PAGESIZE 4 K
+
+CREATE DATABASE arch ON /u02/db2inst2/ARCH USING codeset 1251 TERRITORY RU PAGESIZE 4 K
+
+
+
+db2 catalog tcpip node rdb2 remote thdb22.service.jet.msk.su server 50001
+db2 catalog database testdb2 as labdb2 at node rdb2 AUTHENTICATION SERVER
+
+-- меняем порт тут
+/etc/services |grep db2c_db2inst1
+
+db2 ? errornumber
+
+CREATE BUFFERPOOL BPLOBS SIZE AUTOMATIC PAGESIZE 32 K
+
+create tablespace LOBS PAGESIZE 32K MANAGED BY DATABASE USING (FILE '/u02/db2inst2/LOBS' 40000) BUFFERPOOL BPLOBS AUTORESIZE YES
+
+CREATE TABLE LOBTEST (i int not null GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1), v varchar(30), lobs blob) IN USERSPACE1 INDEX IN USERSPACE1 long IN LOBS
+
+CREATE TABLE LOBTEST (i int not null, v varchar(30), lobs blob (2000000)) IN USERSPACE1 INDEX IN USERSPACE1 long IN LOBS
+
+ALTER TABLE LOBTEST ADD CONSTRAINT iinc PRIMARY KEY (i)
+
+pscp.exe C:\PuTTY\lob.png db2inst2@10.31.99.199:/u02/db2inst2/ 
+
+Рекурсивный запрос для генерации файла с разделителями:
+
+$ cat genlob.sql
+with t(i,b,v) as (values(1,'initial value','lob.png') union all (select i+1,b,v from t where i<20000)) select i||';"'||b||' '||CAST(i+1 as varchar(5))||'";"'||v||'"' from t
+
+Команда для загрузки данных из файла с разделителями:
+
+$ cat loadlobs.sql
+load from genlob.del of del lobs from '/u02/db2inst2/' modified by coldel;  insert into LOBTEST nonrecoverable -- of del  (delimited ASCII forma) / modified by coldel; (меняет разделитесь на ;) / берёт имя файла из вывода и ищет его в '/u02/db2inst2/'
+
+--#SET TERMINATOR @ -- конце команды теперь @
+
+|| -- конкатинация
+
+db2 -f script.sql
+
+ipcs -q -- доступ к памяти. Что размерещно в памяти
+
+sysctl -a | grep msg -- настройки LINUX, в частности по очередям
+
+ALTER TABLESPACE LOBS RESIZE (ALL 2000 M)
+
+create tablespace LOBS1 PAGESIZE 32K MANAGED BY DATABASE USING (FILE '/u02/db2inst2/PLOBS/LOB1' 40000) BUFFERPOOL BPLOBS AUTORESIZE YES
+create tablespace LOBS2 PAGESIZE 32K MANAGED BY DATABASE USING (FILE '/u02/db2inst2/PLOBS/LOB2' 40000) BUFFERPOOL BPLOBS AUTORESIZE YES
+create tablespace LOBS3 PAGESIZE 32K MANAGED BY DATABASE USING (FILE '/u02/db2inst2/PLOBS/LOB3' 40000) BUFFERPOOL BPLOBS AUTORESIZE YES
+create tablespace LOBSDATA1 PAGESIZE 32K MANAGED BY DATABASE USING (FILE '/u02/db2inst2/PLOBS/LOBDATA1' 40000) BUFFERPOOL BPLOBS AUTORESIZE YES
+create tablespace LOBSDATA2 PAGESIZE 32K MANAGED BY DATABASE USING (FILE '/u02/db2inst2/PLOBS/LOBDATA2' 40000) BUFFERPOOL BPLOBS AUTORESIZE YES
+create tablespace LOBSDATA3 PAGESIZE 32K MANAGED BY DATABASE USING (FILE '/u02/db2inst2/PLOBS/LOBDATA3' 40000) BUFFERPOOL BPLOBS AUTORESIZE YES
+
+db2 "ALTER TABLESPACE LOBS1 RESIZE (ALL 3000 M)"
+db2 "ALTER TABLESPACE LOBS2 RESIZE (ALL 3000 M)"
+db2 "ALTER TABLESPACE LOBS3 RESIZE (ALL 3000 M)"
+
+
+db2look -d TESTDB2 -z DB2INST2 -t LOBTEST -e -o FILE_OUT.txt
+
+CREATE TABLE FK_LOBTEST (inc int not null) IN USERSPACE1
+ALTER TABLE FK_LOBTEST ADD FOREIGN KEY (inc) REFERENCES LOBTEST(i)
+
+CREATE TABLE PK_LOBTEST (inc int not null) IN USERSPACE1
+ALTER TABLE PK_LOBTEST ADD CONSTRAINT iinc_pk PRIMARY KEY (inc)
+
+ALTER TABLE FK_LOBTEST DROP CONSTRAINT ?????
+
+ALTER TABLE LOBTEST ADD FOREIGN KEY (i) REFERENCES PK_LOBTEST(inc)
+
+INSERT INTO PK_LOBTEST with t(i) as (values(1) union all (select i+1 FROM t WHERE i<20000))  select i from t
+
+create table lobtest_stage (i integer not null, v varchar(30), lobs blob(2M) logged) index in userspace1 \
+partition by range (i) \
+ (starting 0 ending 5000 in LOBSDATA1 index in LOBSDATA1 long in LOBS1, \
+  starting 5001 ending 10000 in LOBSDATA2 index in LOBSDATA2 long in LOBS2, \
+  starting 10001 ending 150000 in LOBSDATA3 index in LOBSDATA3 long in LOBS3)
+
+call admin_move_table('DB2INST2','LOBTEST','LOBTEST_STAGE','COPY_USE_LOAD NONRECOVERABLE','MOVE') -- требует удаления всех CONSTRAINT
+
+DESCRIBE DATA PARTITIONS FOR TABLE LOBTEST SHOW DETAIL
+
+DESCRIBE DATA PARTITIONS FOR TABLE LOBTEST_ARCH SHOW DETAIL
+
+ALTER TABLE LOBTEST DETACH PARTITION PART0 INTO TABLE LOBTEST_ARCH
+
+ALTER TABLE LOBTEST_ARCH ATTACH PARTITION PART0 STARTING FROM (0) ENDING AT (5000) FROM LOBTEST -- Перенос данных из обычной таблицы в секционированную
+
+SET INTEGRITY FOR LOBTEST ALLOW WRITE ACCESS IMMEDIATE CHECKED INCREMENTAL -- Иногда после переключения партиции требуется проверить целостность
+
+create table lobtest_arch (i integer not null, v varchar(30), lobs blob(2M) logged) index in userspace1 \
+partition by range (i) \
+ (starting 15001 ending 20000 in LOBSDATA1 index in LOBSDATA1 long in LOBS1)
